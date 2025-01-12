@@ -99,8 +99,8 @@ def serve():
     service_pb2_grpc.add_StatisticsServicer_to_server(Statistics(), server)
     
     # Listen on port 50051
-    print("Server started on port 50051...")
-    server.add_insecure_port('[::]:50051')
+    print("Server started on port 50052...")
+    server.add_insecure_port('[::]:50052')
     server.start()
     
     try:
