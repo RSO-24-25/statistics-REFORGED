@@ -30,7 +30,7 @@ class Statistics(service_pb2_grpc.StatisticsServicer):
 
         print("\nFetching prices data for...")
         product_id = request.id
-        print(f"ID: {product_id}")
+        print(f"ID is: {product_id}")
 
 
         connection = pyodbc.connect(connection_string)
