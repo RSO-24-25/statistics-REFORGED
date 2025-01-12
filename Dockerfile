@@ -32,7 +32,10 @@ RUN apt-get update && apt-get install -y \
     unixodbc-dev \
     && rm -rf /var/lib/apt/lists/*
 
+EXPOSE 50052
 
+# Define environment variable
+ENV PYTHONUNBUFFERED=1
 
 
 CMD ["python", "server.py"]
