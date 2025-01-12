@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statistics-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: statistics-service
+  template:
+    metadata:
+      labels:
+        app: statistics-service
+    spec:
+      containers:
+      - name: statistics-service
+        image: rsocontainerregistry.azurecr.io/statistics-service:latest
+        ports:
+        - containerPort: 50051
+        env:
+        - name: MONGO_URL
+          value: "mongodb+srv://mongodb:galjetaksef123!@mongoloidgal.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000"
+        - name: AUTHENTICATION_URL
+          value: "http://web-auth:8000"
+
+

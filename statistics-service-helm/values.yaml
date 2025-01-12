@@ -1,0 +1,20 @@
+deployment:
+  name: statistics-service
+  replicas: 1
+  image: rsocontainerregistry.azurecr.io/statistics-service:latest
+  port: 50051
+  env:
+    - name: AUTHENTICATION_URL
+      value: "http://web-auth:8000/web-auth"
+    - name: INVENTORY_URL
+      value: "http://inventory:3000/inventory/graphql"
+
+service:
+  name: statistics-service
+  port: 50051
+  targetPort: 50051
+  type: ClusterIP
+
+health:
+  initialDelaySeconds: 20
+  periodSeconds: 120
