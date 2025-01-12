@@ -2,7 +2,7 @@ deployment:
   name: statistics-service
   replicas: 1
   image: rsocontainerregistry.azurecr.io/statistics-service:latest
-  port: 50051
+  port: 50052
   env:
     - name: AUTHENTICATION_URL
       value: "http://web-auth:8000/web-auth"
@@ -11,8 +11,8 @@ deployment:
 
 service:
   name: statistics-service
-  port: 50051
-  targetPort: 50051
+  port: 50052
+  targetPort: 50052
   type: ClusterIP
 
 health:

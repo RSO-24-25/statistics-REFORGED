@@ -6,6 +6,6 @@ services:
     build: .
     container_name: statistics
     ports:
-      - "50051:50051"
+      - "50052:50052"
     environment:
       - MONGO_URI=mongodb+srv://mongodb:galjetaksef123!@mongoloidgal.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000  # MongoDB URI for Flask to use

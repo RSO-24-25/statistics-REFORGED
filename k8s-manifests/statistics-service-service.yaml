@@ -7,6 +7,6 @@ spec:
     app: statistics-service
   ports:
   - protocol: TCP
-    port: 50051
-    targetPort: 50051
+    port: 50052
+    targetPort: 50052
   type: ClusterIP
