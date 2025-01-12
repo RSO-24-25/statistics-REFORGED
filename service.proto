@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+service Statistics {
+    rpc Get_Prices_Graph (HelloRequest) returns (GraphReply);
+    rpc Get_all_products (HelloRequest) returns (AllProductsReply);
+}
+
+message HelloRequest {
+    string id = 1;
+}
+
+message GraphReply {
+    string message = 1;
+    bytes image = 2;
+}
+
+message Product {
+    int32 id = 1;
+    string name = 2;
+}
+
+message AllProductsReply {
+    repeated Product products = 1;
+}
